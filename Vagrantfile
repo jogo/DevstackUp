@@ -34,19 +34,6 @@ Vagrant::Config.run do |config|
 
   Vagrant::Config.run  do |config|
     config.vm.provision :shell, :inline =>
-      "apt-get install -qqy git;
-       git clone https://github.com/openstack-dev/devstack.git;
-       cd devstack;
-       echo ADMIN_PASSWORD=password > localrc;
-       echo MYSQL_PASSWORD=password >> localrc;
-       echo RABBIT_PASSWORD=password >> localrc;
-       echo SERVICE_PASSWORD=password >> localrc;
-       echo SERVICE_TOKEN=tokentoken >> localrc;
-       echo FLAT_INTERFACE=eth1>> localrc;
-       echo PUBLIC_INTERFACE=eth1>> localrc;
-       echo HOST_IP=192.168.27.100>> localrc;
-       echo FLOATING_RANGE=192.168.27.128/28>> localrc;
-       echo API_RATE_LIMIT=False>> localrc;
-       su -c 'set -e ; ./stack.sh' vagrant "
+      "cp /vagrant/load.sh .; su vagrant -c './load.sh'"
     end
 end
