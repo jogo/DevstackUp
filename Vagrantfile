@@ -1,11 +1,9 @@
-# Override these values with a local config defined in VD_CONF
 conf = {
     'ip_prefix' => '192.168.27',
     'mac_prefix' => '080027027',
     'box_name' => 'precise',
     'box_url' => 'http://files.vagrantup.com/precise64.box',
     'allocate_memory' => 3072,
-    'cache_dir' => 'cache/',
     'ssh_dir' => '~/.ssh/',
 }
 
@@ -28,6 +26,9 @@ Vagrant::Config.run do |config|
   Vagrant::Config.run do |config|
     config.vm.network(:hostonly, ip, :mac => mac)
   end
+
+  # For horizon
+  config.vm.forward_port 80, 8080
 
   ssh_dir = conf['ssh_dir']
   config.vm.share_folder("v-ssh", "/home/vagrant/.host-ssh", ssh_dir)
