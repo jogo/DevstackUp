@@ -10,4 +10,4 @@
 
 ### Step 2: `git clone git://github.com/jog0/DevstackUp.git`
 
-### Step 3 Vagrant up: `cd DevstackLoader; vagrant up`
+### Step 3 Vagrant up: `cd DevstackUp; vagrant up`
