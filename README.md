@@ -11,3 +11,6 @@
 ### Step 2: `git clone git://github.com/jog0/DevstackUp.git`
 
 ### Step 3 Vagrant up: `cd DevstackUp; vagrant up`
+
+#### Note: 
+If you have another box named `precise`, you must remove it first with `vagrant box remove precise`
