@@ -12,5 +12,5 @@
 
 ### Step 3 Vagrant up: `cd DevstackUp; vagrant up`
 
-#### Note: 
+#### Note:
 If you have another box named `precise`, you must remove it first with `vagrant box remove precise`
