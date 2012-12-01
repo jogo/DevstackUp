@@ -1,5 +1,7 @@
 ### Devstack with Vagrant
 
+stable/folsom branch
+
 ## Features
 
 * 3GB Vagrant VM

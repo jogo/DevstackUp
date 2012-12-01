@@ -10,3 +10,12 @@ FLOATING_RANGE=192.168.27.128/28
 API_RATE_LIMIT=False
 VERBOSE=True
 LOGFILE=devstack.log
+
+# stable/folsom
+NOVA_BRANCH=stable/folsom
+CINDER_BRANCH=stable/folsom
+GLANCE_BRANCH=stable/folsom
+KEYSTONE_BRANCH=stable/folsom
+QUANTUM_BRANCH=stable/folsom
+HORIZON_BRANCH=stable/folsom
+SWIFT_BRANCH=stable/folsom
