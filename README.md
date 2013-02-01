@@ -18,7 +18,7 @@
 
 #### Tests:
 
-* `~/devstck/exercise.sh`
+* `~/devstack/exercise.sh`
 * `cd /opt/stack/tempest ;  nosetests --attr=type=smoke tempest`
 
 #### Notes:
