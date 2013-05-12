@@ -23,9 +23,7 @@ Vagrant::Config.run do |config|
   mac_prefix = conf['mac_prefix']
   mac = "#{mac_prefix}#{suffix}"
 
-  Vagrant::Config.run do |config|
-    config.vm.network(:hostonly, ip, :mac => mac)
-  end
+  config.vm.network(:hostonly, ip, :mac => mac)
 
   # For horizon
   config.vm.forward_port 80, 8080
@@ -33,8 +31,6 @@ Vagrant::Config.run do |config|
   ssh_dir = conf['ssh_dir']
   config.vm.share_folder("v-ssh", "/home/vagrant/.host-ssh", ssh_dir)
 
-  Vagrant::Config.run  do |config|
-    config.vm.provision :shell, :inline =>
-      "cp /vagrant/load.sh .; su vagrant -c './load.sh'"
-    end
+  config.vm.provision :shell, :inline =>
+    "cp /vagrant/load.sh .; su vagrant -c './load.sh'"
 end
