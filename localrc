@@ -19,3 +19,12 @@ ACTIVE_TIMEOUT=60
 BOOT_TIMEOUT=90
 ASSOCIATE_TIMEOUT=60
 TERMINATE_TIMEOUT=60
+
+# stable/grizzly
+NOVA_BRANCH=stable/grizzly
+CINDER_BRANCH=stable/grizzly
+GLANCE_BRANCH=stable/grizzly
+KEYSTONE_BRANCH=stable/grizzly
+QUANTUM_BRANCH=stable/grizzly
+HORIZON_BRANCH=stable/grizzly
+SWIFT_BRANCH=stable/grizzly
