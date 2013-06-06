@@ -22,13 +22,9 @@ Vagrant::Config.run do |config|
   mac_prefix = conf['mac_prefix']
   mac = "#{mac_prefix}#{suffix}"
 
-  Vagrant::Config.run do |config|
-    config.vm.network(:hostonly, ip, :mac => mac)
-  end
+  config.vm.network(:hostonly, ip, :mac => mac)
 
-  Vagrant::Config.run  do |config|
-    config.vm.provision :shell, :inline =>
-      "cp /vagrant/install-packages.sh .; sudo './install-packages.sh'"
-  end
+  config.vm.provision :shell, :inline =>
+    "cp /vagrant/install-packages.sh .; sudo './install-packages.sh'"
 
 end
