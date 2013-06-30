@@ -24,4 +24,6 @@
 #### Notes:
 
 * If you have another box named `precise`, you must remove it first with `vagrant box remove precise`
-* You can use build a vagrant box that has most of the devstack dependencies pre-installed, see `./build-box`
+* To build, vagrant box that has most of the devstack dependencies pre-installed:
+  * `cd build_box`
+  * `./build.sh`
