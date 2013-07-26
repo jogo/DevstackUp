@@ -20,7 +20,7 @@ rm -rf requirements
 
 mkdir /opt/stack
 cd /opt/stack
-for i in nova glance swift cinder horizon keystone python-cinderclient python-glanceclient python-keystoneclient python-novaclient python-quantumclient tempest
+for i in nova glance swift cinder horizon keystone python-cinderclient python-glanceclient python-keystoneclient python-novaclient python-neutronclient tempest
 do
   git clone https://review.openstack.org/p/openstack/$i.git
 done
