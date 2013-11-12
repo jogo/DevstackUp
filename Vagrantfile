@@ -23,7 +23,7 @@ Vagrant::Config.run do |config|
   mac_prefix = conf['mac_prefix']
   mac = "#{mac_prefix}#{suffix}"
 
-  config.vm.network(:hostonly, ip, :mac => mac)
+  config.vm.network(:private_network, ip, :mac => mac)
 
   # For horizon
   config.vm.forward_port 80, 8080
