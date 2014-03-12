@@ -1,11 +1,27 @@
 conf = {
     'ip_prefix' => '192.168.27',
-    'mac_prefix' => '080027027',
     'box_name' => 'devstack',
     'box_url' => 'http://files.vagrantup.com/precise64.box',
     'allocate_memory' => 3072,
     'ssh_dir' => '~/.ssh/',
 }
+
+suffix = "100"
+
+
+ip_prefix = conf['ip_prefix']
+ip = "#{ip_prefix}.#{suffix}"
+
+
+Vagrant.configure("1") do |config|
+  config.vm.network(:hostonly, ip)
+end
+
+
+Vagrant.configure("2") do |config|
+  config.vm.network "private_network", ip: ip
+end
+
 
 Vagrant::Config.run do |config|
 
@@ -14,16 +30,6 @@ Vagrant::Config.run do |config|
 
   memory = conf['allocate_memory'].to_s()
   config.vm.customize ["modifyvm", :id, "--memory", memory]
-
-  suffix = "100"
-
-  ip_prefix = conf['ip_prefix']
-  ip = "#{ip_prefix}.#{suffix}"
-
-  mac_prefix = conf['mac_prefix']
-  mac = "#{mac_prefix}#{suffix}"
-
-  config.vm.network(:private_network, ip, :mac => mac)
 
   # For horizon
   config.vm.forward_port 80, 8080

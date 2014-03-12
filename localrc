@@ -10,6 +10,10 @@ API_RATE_LIMIT=False
 VERBOSE=True
 LOGFILE=$DEST/logs/devstack.log
 SCREEN_LOGDIR=$DEST/logs/screen
+SYSLOG=False
+VOLUME_BACKING_FILE_SIZE=24G
+
+GIT_BASE=https://git.openstack.org
 
 LOG_COLOR=False
 SKIP_EXERCISES=boot_from_volume,client-env
