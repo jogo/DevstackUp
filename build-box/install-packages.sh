@@ -13,7 +13,17 @@ rm -rf devstack
 git clone --depth=1 https://review.openstack.org/p/openstack/requirements.git
 cd  requirements
 mkdir /var/cache/pip
-pip install --download-cache /var/cache/pip -r requirements.txt -r test-requirements.txt git-review
+REQS=""
+if [ -r global-requirements.txt ]; then
+    REQS="-r global-requirements.txt"
+else
+    for req in requirements.txt test-requirements.txt; do
+        if [ -r "$req" ]; then
+            REQS="$REQS -r $req"
+        fi
+    done
+fi
+pip install --download-cache /var/cache/pip $REQS git-review
 cd ../
 rm -rf requirements
 
